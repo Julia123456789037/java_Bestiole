@@ -13,7 +13,7 @@ public class FramePlateau extends Frame
 	{
 		this.ctlr  = ctl;
 		this.setTitle   ( "Plateau" );
-		this.setSize    ( 400,300 );
+		this.setSize    ( 1400,700 );
 		this.setLocation(  50, 50 );
 
 		this.add ( new PanelPlateau() );
