@@ -1,11 +1,9 @@
 package projet_java.Bestiole.java_Bestiole.GUI;
 
 import javax.imageio.ImageIO;
-//import java.awt.*;
 import javax.swing.*;
-
+import projet_java.Bestiole.java_Bestiole.metier.CarteBestiole;
 import projet_java.Bestiole.java_Bestiole.metier.PaquetBestiole;
-
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import java.awt.Color;
@@ -14,6 +12,7 @@ import java.io.File;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Graphics;
+import java.awt.Image;
 
 
 public class PanelPlateau extends JPanel 
@@ -92,21 +91,18 @@ public class PanelPlateau extends JPanel
 
 
 
-        /*******
-
-        for (Carte c : this.lstCarte.getPaquet())
+        for (CarteBestiole c : this.lstCarte.getPaquet())
 			g.drawImage(c.getImage(), c.getPosX()-50, c.getPosY(), this);
 		
-		if( this.lstPiocher.taille() != 0 )
+		if( this.lstJoueur1.taille() != 0 )
 		{
-			for(Carte c : this.lstPiocher.getPaquet())
+			for(CarteBestiole c : this.lstJoueur1.getPaquet())
 			try 
 			{
-				g.drawImage( ( ImageIO.read( new File("./cartes/dos.png") ) ).getScaledInstance( 70, 90, Image.SCALE_DEFAULT ), c.getPosX()-50, c.getPosY(), this);
+				g.drawImage( ( ImageIO.read( new File("../Images/Dos.png") ) ), 800-50, 60, this);
 			} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
 		}
 
-******/
 
     }
 
