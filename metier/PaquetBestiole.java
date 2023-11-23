@@ -4,7 +4,7 @@ package projet_java.Bestiole.java_Bestiole.metier;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import projet_java.Bestiole.java_Bestiole.*;
+import projet_java.Bestiole.java_Bestiole.metier.*;
 
 
 

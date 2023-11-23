@@ -3,6 +3,9 @@ package projet_java.Bestiole.java_Bestiole.GUI;
 import javax.imageio.ImageIO;
 //import java.awt.*;
 import javax.swing.*;
+
+import projet_java.Bestiole.java_Bestiole.metier.PaquetBestiole;
+
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import java.awt.Color;
@@ -16,9 +19,10 @@ import java.awt.Graphics;
 public class PanelPlateau extends JPanel 
 {
 	private JLabel lblMessage;
-    private Paquet				lstPiocher;
-	private Paquet				lstCarte;
-    private Lance  ctlr;
+    private PaquetBestiole  lstJoueur1;
+    private PaquetBestiole  lstJoueur2;
+	private PaquetBestiole  lstCarte;
+    private Lance           ctlr;
 
 
 	public PanelPlateau(Lance ctl)
@@ -34,6 +38,10 @@ public class PanelPlateau extends JPanel
 		//this.lblMessage  = new JLabel();
 		//this.lblMessage.setBackground(Color.white);
 		//this.lblMessage.setText (" Panneau du Plateau ");
+
+        this.lstJoueur1   	= new PaquetBestiole(1);								//Arraylist vide par défaut
+        this.lstJoueur2   	= new PaquetBestiole(1);	
+		this.lstCarte	    = new PaquetBestiole(0);		//Arraylist de carte pleine changeant en fonction du int récup
 		
 
 
@@ -47,29 +55,10 @@ public class PanelPlateau extends JPanel
 		/* Activation des composants    */
 		/* ---------------------------- */ 
 
-        this.ctrl        = ctrl;  
-		this.pnl 		 = pnl;
-		
-		// Création des composants	
 
-        this.lstPiocher   	= new Paquet(1);								//Arraylist vide par défaut
-		this.lstCarte	    = new Paquet(this.ctlr.getNumPaquetM1());		//Arraylist de carte pleine changeant en fonction du int récup
-		this.lstCarte 	= this.pnl.getListCartes();
-		this.lstPiocher = this.pnl.getListPioche();
+
 
 		this.setVisible(true);
-
-
-
-
-        
-
-        
-
-
-		
-
-
 	}
 
 

@@ -14,25 +14,23 @@ import java.awt.Image;
 
 public class CarteBestiole
 {
-    private static  int 				num = 0;
-	private static  String[]			typeSigne = {"Eléphant", "Renard", "Chat", "Souris"};
-	private  		int 				ident;
-    private  		int 				numCarte;
-    private  		String             	signe;
-
-	private  		int 				posX; 
-	private  		int 				posY;
-	private	 		Image				image;
+    private static	int			num = 0;
+	private static  String[]	typeSigne = {"Eléphant", "Renard", "Chat", "Souris"};
+	private  		int			ident;
+    private  		String		signe;
+	private  		int			posX; 
+	private  		int			posY;
+	private	 		Image		image;
 
     public CarteBestiole()
     {
 		this.ident = this.num;
 		this.num = this.num + 1;
 
-        if ( this.ident < 10 ) { this.signe=typeSigne[0]; } 
-        else if ( this.ident > 9 && this.ident < 20 ) { this.signe=typeSigne[1]; }
-        else if ( this.ident > 19 && this.ident < 30 ) { this.signe=typeSigne[2]; }
-        else if ( this.ident > 29 && this.ident < 40 ) { this.signe=typeSigne[3]; }
+        if ( this.ident < 10 ) 								{ this.signe=typeSigne[0]; } 
+        else if ( this.ident > 9  && this.ident < 20 	) 	{ this.signe=typeSigne[1]; }
+        else if ( this.ident > 19 && this.ident < 30 	)	{ this.signe=typeSigne[2]; }
+        else if ( this.ident > 29 && this.ident < 40 	)	{ this.signe=typeSigne[3]; }
 
 
 		setImage();
@@ -52,7 +50,6 @@ public class CarteBestiole
 	{
 		try 
 		{
-            System.out.println("./carte/" + this.signe + ".png");
 			this.image = ( ImageIO.read( new File("./carte/" + this.signe + ".png") ) );
 		} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
 	}
