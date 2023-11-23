@@ -35,7 +35,7 @@ public class PanelPlateau extends JPanel
 
 		try {
 			// Charger l'image de fond
-			backgroundImage = ImageIO.read(new File("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Image/Fond3.png"));
+			backgroundImage = ImageIO.read(new File("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Image/Fond.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("ERREUR IMAGE");
@@ -55,8 +55,8 @@ public class PanelPlateau extends JPanel
 		this.lstCarte	    = new PaquetBestiole(0);		//Arraylist de carte pleine changeant en fonction du int récup
 
 
-		JLabel imageLabel = new JLabel(new ImageIcon("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Image/roue.png"));
-        imageLabel.setBounds(1000, 800, 50, 50); // Définir les coordonnées et la taille de l'image normale
+		//JLabel imageLabel = new JLabel(new ImageIcon("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Image/roue.png"));
+        //imageLabel.setBounds(1000, 800, 50, 50); // Définir les coordonnées et la taille de l'image normale
 
 
 		
@@ -66,7 +66,7 @@ public class PanelPlateau extends JPanel
 		/* Postionnement des composants */
 		/* ---------------------------- */
 		//this.add( this.lblMessage );
-		this.add(imageLabel);
+		//this.add(imageLabel);
 
 
 		/* ---------------------------- */
@@ -89,14 +89,22 @@ public class PanelPlateau extends JPanel
 	protected void paintComponent(Graphics g) 
 	{
 		super.paintComponent(g);
+		Graphics2D g2d = (Graphics2D) g;
 
 		// Dessiner l'image de fond
 		if (backgroundImage != null) {
 			g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
 		}
 
+		try {
+			// Charger l'image de fond
+			g.drawImage( ImageIO.read(new File("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Image/roue.png")), 1050, 350, 300, 300, this);
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("ERREUR IMAGE");
+		}
+		
 		// Convertir l'objet Graphics en Graphics2D
-		Graphics2D g2d = (Graphics2D) g;
 
 		// Définir le motif du trait (pointillé)
 		float[] dashPattern = {5.0f, 5.0f};
