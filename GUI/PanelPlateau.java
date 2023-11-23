@@ -67,10 +67,10 @@ public class PanelPlateau extends JPanel
         g2d.setStroke(dashStroke);
 
         // Dessiner la ligne pointillée
-        int x1 = 80;
-        int y1 = 80;
-        int x2 = 250;
-        int y2 = 250;
+        int x1 = 0;
+        int y1 = 350;
+        int x2 = 1400;
+        int y2 = 350;
         Line2D line = new Line2D.Double(x1, y1, x2, y2);
         g2d.draw(line);
     }
