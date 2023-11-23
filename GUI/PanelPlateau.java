@@ -1,11 +1,13 @@
 package projet_java.Bestiole.java_Bestiole.GUI;
 
+import javax.imageio.ImageIO;
 //import java.awt.*;
 import javax.swing.*;
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import java.awt.Color;
 import java.awt.geom.Line2D;
+import java.io.File;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Graphics;
@@ -14,10 +16,14 @@ import java.awt.Graphics;
 public class PanelPlateau extends JPanel 
 {
 	private JLabel lblMessage;
+    private Paquet				lstPiocher;
+	private Paquet				lstCarte;
+    private Lance  ctlr;
 
 
-	public PanelPlateau()
+	public PanelPlateau(Lance ctl)
 	{
+        this.ctlr  = ctl;
 		this.setBackground(new Color(206,154,82));
 
 		this.setLayout(new FlowLayout());
@@ -25,27 +31,48 @@ public class PanelPlateau extends JPanel
 		/* Création des composants      */
 		/* ---------------------------- */
 
-		this.lblMessage  = new JLabel();
-		this.lblMessage.setBackground(Color.white);
-		this.lblMessage.setText (" Panneau du Plateau ");
+		//this.lblMessage  = new JLabel();
+		//this.lblMessage.setBackground(Color.white);
+		//this.lblMessage.setText (" Panneau du Plateau ");
 		
 
 
 		/* ---------------------------- */
 		/* Postionnement des composants */
 		/* ---------------------------- */
-		this.add( this.lblMessage );
+		//this.add( this.lblMessage );
 
 
 		/* ---------------------------- */
 		/* Activation des composants    */
 		/* ---------------------------- */ 
 
+        this.ctrl        = ctrl;  
+		this.pnl 		 = pnl;
+		
+		// Création des composants	
+
+        this.lstPiocher   	= new Paquet(1);								//Arraylist vide par défaut
+		this.lstCarte	    = new Paquet(this.ctlr.getNumPaquetM1());		//Arraylist de carte pleine changeant en fonction du int récup
+		this.lstCarte 	= this.pnl.getListCartes();
+		this.lstPiocher = this.pnl.getListPioche();
+
+		this.setVisible(true);
+
+
+
+
+        
+
+        
+
 
 		
 
 
 	}
+
+
 	/**
      * Dessine la ligne pointillée dans le panneau.
      *
@@ -73,6 +100,25 @@ public class PanelPlateau extends JPanel
         int y2 = 350;
         Line2D line = new Line2D.Double(x1, y1, x2, y2);
         g2d.draw(line);
+
+
+
+        /*******
+
+        for (Carte c : this.lstCarte.getPaquet())
+			g.drawImage(c.getImage(), c.getPosX()-50, c.getPosY(), this);
+		
+		if( this.lstPiocher.taille() != 0 )
+		{
+			for(Carte c : this.lstPiocher.getPaquet())
+			try 
+			{
+				g.drawImage( ( ImageIO.read( new File("./cartes/dos.png") ) ).getScaledInstance( 70, 90, Image.SCALE_DEFAULT ), c.getPosX()-50, c.getPosY(), this);
+			} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
+		}
+
+******/
+
     }
 
 }

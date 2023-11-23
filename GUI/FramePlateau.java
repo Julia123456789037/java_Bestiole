@@ -16,7 +16,7 @@ public class FramePlateau extends Frame
 		this.setSize    ( 1400,700 );
 		this.setLocation(  50, 50 );
 
-		this.add ( new PanelPlateau() );
+		this.add ( new PanelPlateau(this.ctlr) );
 
 		// Gestion de la fermture de la fenêtre
 		this.addWindowListener( new WindowAdapter(){ public void windowClosing(WindowEvent e){System.exit(0);} } );
