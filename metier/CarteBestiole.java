@@ -35,7 +35,7 @@ public class CarteBestiole
         else if ( this.ident > 29 && this.ident < 40 ) { this.signe=typeSigne[3]; }
 
 
-		//setImage();
+		setImage();
     }
 
 	public void 			resetNUM	() 		{ this.num = 0; 		}
@@ -48,15 +48,15 @@ public class CarteBestiole
 	public Image			getImage	()		{ return this.image;	}
 
 
-/* 
 	public void setImage()
 	{
 		try 
 		{
-			this.image = ( ImageIO.read( new File("./cartes/" + this.signe + "_" + this.coul + "_" + this.numCarte + ".png") ) ).getScaledInstance( 70, 90, Image.SCALE_DEFAULT);
+            System.out.println("./carte/" + this.signe + ".png");
+			this.image = ( ImageIO.read( new File("./carte/" + this.signe + ".png") ) );
 		} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
 	}
-*/
+
     public String toString() 
     {
         return "[" + this.ident + "] " + this.signe + ":" + '\n'; 
@@ -74,8 +74,6 @@ public class CarteBestiole
         }
 
 		System.out.println ();
-		
-
 	}
 
 }
