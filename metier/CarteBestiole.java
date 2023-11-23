@@ -50,7 +50,7 @@ public class CarteBestiole
 	{
 		try 
 		{
-			this.image = ( ImageIO.read( new File("./carte/" + this.signe + ".png") ) );
+			this.image = ( ImageIO.read( new File("../Image/" + this.signe + ".png") ) );
 		} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
 	}
 
