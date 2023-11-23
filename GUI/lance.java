@@ -10,10 +10,7 @@ public class Lance
 
 	public Lance()
 	{
-
 		this.framePlateau = new FramePlateau(this);
-
-
 	}
 
     public static void main(String[] a){ new Lance(); }
