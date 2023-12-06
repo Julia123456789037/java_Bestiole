@@ -128,9 +128,12 @@ public class PanelPlateau extends JPanel
 			//g.drawImage(c.getImage(), c.getPosX()-50, c.getPosY(), this);
 			try 
 			{
-				g.drawImage( ( ImageIO.read( new File("./Images/Dos.png") ) ), 800-50, 60, this);
+				//g.drawImage( ( ImageIO.read( new File("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Images/Dos.png") ) ), 800-50, 60, this);
+				g.drawImage( ImageIO.read(new File("C:\\Users\\justi\\Desktop\\JUSTINE\\projet info\\projet_java\\Bestiole\\java_Bestiole\\Image/Dos.png")), 800-50, 60, 150, 200, this);
 			} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image DOS"); }
+			
 		}
+		System.out.println("test 2");
 			
 		
 		if( this.lstJoueur1.taille() != 0 )
