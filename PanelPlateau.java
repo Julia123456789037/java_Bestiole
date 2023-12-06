@@ -124,15 +124,24 @@ public class PanelPlateau extends JPanel
 
 
 		for (CarteBestiole c : this.lstCarte.getPaquet())
-			g.drawImage(c.getImage(), c.getPosX()-50, c.getPosY(), this);
+		{
+			//g.drawImage(c.getImage(), c.getPosX()-50, c.getPosY(), this);
+			try 
+			{
+				g.drawImage( ( ImageIO.read( new File("./Images/Dos.png") ) ), 800-50, 60, this);
+			} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image DOS"); }
+		}
+			
 		
 		if( this.lstJoueur1.taille() != 0 )
 		{
+			System.out.println("carte dos");
 			for(CarteBestiole c : this.lstJoueur1.getPaquet())
 			try 
 			{
-				g.drawImage( ( ImageIO.read( new File("../Images/Dos.png") ) ), 800-50, 60, this);
-			} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
+				g.drawImage( ( ImageIO.read( new File("./Images/Dos.png") ) ), 800-50, 60, this);
+			} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image DOS"); }
+			System.out.println(" fin carte dos");
 		}
 
 
