@@ -1,9 +1,9 @@
-package projet_java.Bestiole.java_Bestiole.GUI;
+package projet_java.Bestiole.java_Bestiole;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import projet_java.Bestiole.java_Bestiole.metier.CarteBestiole;
-import projet_java.Bestiole.java_Bestiole.metier.PaquetBestiole;
+import projet_java.Bestiole.java_Bestiole.CarteBestiole;
+import projet_java.Bestiole.java_Bestiole.PaquetBestiole;
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import java.awt.Color;

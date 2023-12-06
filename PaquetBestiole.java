@@ -1,10 +1,10 @@
-package projet_java.Bestiole.java_Bestiole.metier;
+package projet_java.Bestiole.java_Bestiole;
 
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import projet_java.Bestiole.java_Bestiole.metier.*;
+import projet_java.Bestiole.java_Bestiole.*;
 
 
 

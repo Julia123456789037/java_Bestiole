@@ -1,4 +1,6 @@
-package projet_java.Bestiole.java_Bestiole.GUI;
+package projet_java.Bestiole.java_Bestiole;
+
+import projet_java.Bestiole.java_Bestiole.*;
 
 public class Lance 
 {

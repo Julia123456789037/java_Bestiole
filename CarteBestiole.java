@@ -1,4 +1,4 @@
-package projet_java.Bestiole.java_Bestiole.metier;
+package projet_java.Bestiole.java_Bestiole;
 
 import java.io.File;
 import javax.imageio.ImageIO;
@@ -50,7 +50,7 @@ public class CarteBestiole
 	{
 		try 
 		{
-			this.image = ( ImageIO.read( new File("../Image/" + this.signe + ".png") ) );
+			this.image = ( ImageIO.read( new File("./Image/" + this.signe + ".png") ) ).getScaledInstance( 70, 90, Image.SCALE_DEFAULT);
 		} catch (Exception ex) { System.out.println("Exception lors du chargement de l'image"); }
 	}
 
